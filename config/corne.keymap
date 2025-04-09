@@ -34,10 +34,10 @@
             // | SHFT | LFT | UP  | DWN | RGT | ALT |               | APP |HOME |PGUP |PGDN | END | F12  |
             //                          | GUI |-...-|-CON-|   | ENT |     | ESC |
             bindings = <
-                &kp TAB   &kp F1   &kp F2   &kp F3 &kp F4    &kp F5     &kp F6    &kp F7    &kp F8    &kp F9    &kp F10 &kp BSPC
-                &kp LCTRL &kp N1   &kp N2   &kp N3 &kp N4    &kp N5     &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  &kp F11
-                &kp LSHFT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LALT   &kp K_APP &kp HOME  &kp PG_UP &kp PG_DN &kp END &kp F12
-                &kp LGUI  &trans  &kp SPACE   &kp RET  &trans  &kp RALT
+                &kp TAB   &kp F1   &kp F2   &kp F3 &kp F4    &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10 &kp BSPC
+                &kp LCTRL &kp N1   &kp N2   &kp N3 &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  &kp F11
+                &kp LSHFT &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp LALT     &kp K_APP &kp HOME  &kp PG_UP &kp PG_DN &kp END &kp F12
+                                              &kp LGUI  &trans  &trans    &kp RET  &trans  &kp ESC
             >;
         };
         raise_layer {
