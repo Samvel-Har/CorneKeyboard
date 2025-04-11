@@ -62,7 +62,7 @@
             // | TAB  |  Q  |  W  |  E  |  R  |  T  |               |  Y  |  U  |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |               |  H  |  J  |  K  |  L  |  ;  |  '   |           | : | " |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |               |  N  |  M  |  ,  |  .  |  /  | SHFT |   | < | > | ? |
-            //                          | GUI |-LWR-| SPC |   | ENT |-RSE-| ESC |
+            //              (-CON-)     | GUI |-LWR-| SPC |   | ENT |-RSE-| ESC |     (-CON-)
             bindings = <
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T            &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G            &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
@@ -76,12 +76,12 @@
             // | TAB  | F1  | F2  | F3  | F4  | F5  |               | F6  | F7  | F8  | F9  | F10 | BKSP |
             // | CTRL |  1  |  2  |  3  |  4  |  5  |               |  6  |  7  |  8  |  9  |  0  | F11  |
             // | SHFT | LFT | UP  | DWN | RGT | ALT |               | APP |HOME |PGUP |PGDN | END | F12  |
-            //                          | GUI |-...-|-CON-|   | ENT |     | ESC |
+            //                          | GUI |-...-| SPC |   | ENT |     | ESC |
             bindings = <
                 &kp TAB   &kp F1   &kp F2   &kp F3 &kp F4    &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10 &kp BSPC
                 &kp LCTRL &kp N1   &kp N2   &kp N3 &kp N4    &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  &kp F11
                 &kp LSHFT &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp LALT     &kp K_APP &kp HOME  &kp PG_UP &kp PG_DN &kp END &kp F12
-                                              &kp LGUI  &trans  &mo 3     &kp RET  &trans  &kp ESC
+                                          &kp LGUI  &trans  &kp SPACE     &kp RET  &trans  &kp ESC
             >;
         };
         raise_layer {//2
@@ -90,26 +90,26 @@
             // | TAB  |  `  |  ~  |     |     |     |               |  -  |  =  |  \  |  [  |  ]  | DEL  |
             // | CTRL |  !  |  @  |  #  |  $  |  %  |               |  ^  |  &  |  *  |  (  |  )  | CTRL |
             // | SHFT |     |     |     |     |     |               |  _  |  +  | "|" |  {  |  }  |      |
-            //                          | GUI |     | SPC |   |-CON-|-...-| ESC |
+            //                          | GUI |     | SPC |   | ENT |-...-| ESC |
             bindings = <
                 &kp TAB   &kp GRAVE &kp TILDE &trans   &trans   &trans           &kp MINUS &kp EQUAL &kp BSLH  &kp LBKT &kp RBKT &kp DELETE
                 &kp LCTRL &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp RCTRL
                 &kp LSHFT &trans    &trans    &trans   &trans   &trans           &kp UNDER &kp PLUS  &kp PIPE  &kp LBRC &kp RBRC &trans
-                                              &kp LGUI  &trans  &kp SPACE        &mo 3  &trans  &kp ESC
+                                              &kp LGUI  &trans  &kp SPACE        &kp RET  &trans  &kp ESC
             >;
         };
         control_layer {//3
             display-name = "Con";
             // -------------------------------------------------------------------------------------------
-            // |+GAME+|PSCRN| INCO| PREV| NEXT| PP  |               | RMB | MSL | MSU | MSD | MSR |      |
+            // |+GAME+|     | INCO| PREV| NEXT| PP  |               | RMB | MSL | MSU | MSD | MSR | PSCRN|
             // |      |BRIDN|BRIUP|VOLDN|VOLUP|MUTE |               | LMB | MML | MMU | MMD | MMR |      |
             // |      | BT1 | BT2 | BT3 | BT4 |BTCLR|               | CMB | 4MB | 5MB |     |     |      |
-            //                          |     |-...-|-...-|   |-...-|-...-|     |
+            //                          |     |-...-|     |   |     |-...-|     |
             bindings = <
-                &tog 4 &kp PSCRN    &inco        &kp C_PREV   &kp C_NEXT   &kp C_PP          &mkp RCLK &msc SCRL_LEFT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_RIGHT &none
+                &tog 4 &none        &inco        &kp C_PREV   &kp C_NEXT   &kp C_PP          &mkp RCLK &msc SCRL_LEFT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_RIGHT &kp PSCRN
                 &none  &kp C_BRI_DN &kp C_BRI_UP &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE        &mkp LCLK &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
                 &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR        &mkp MCLK &mkp MB4       &mkp MB5     &none          &none           &none
-                                                                    &none &none &none        &none &none &none
+                                                                  &none  &none  &none        &none  &none  &none
             >;
         };
         game_layer {//4
@@ -118,12 +118,12 @@
             // |  T   | TAB |  Q  |  W  |  E  |  R  |               |  Y  |  U  |  I  |  O  |  P  | BKSP |
             // |  G   | CTRL|  A  |  S  |  D  |  F  |               |  H  |  J  |  K  |  L  |  ;  |  '   |       | :  | " |
             // |  B   | SHFT|  Z  |  X  |  C  |  V  |               |  N  |  M  |  ,  |  .  |  /  | SHFT |   | < | >  | ? |
-            //                          | GUI |-LWR-| SPC |   | ENT |-RSE-| ESC |
+            //                          | GUI |+GAM+| SPC |   | ENT |     | ESC |
             bindings = <
                 &kp T &kp TAB   &kp Q &kp W &kp E &kp R            &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
                 &kp G &kp LCTRL &kp A &kp S &kp D &kp F            &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp B &kp LSHFT &kp Z &kp X &kp C &kp V            &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                             &kp LGUI  &mo 1  &kp SPACE            &kp RET  &mo 2  &kp ESC
+                            &kp LGUI  &tog 4  &kp SPACE            &kp RET  &none  &kp ESC
             >;
         };
         
