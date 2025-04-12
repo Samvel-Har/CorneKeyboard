@@ -43,9 +43,9 @@
             bindings
                 = <&macro_tap &tog 4>
                 , <&macro_press &mo 1>
-                //, <&macro_pause_for_release>
+                , <&macro_pause_for_release>
                 , <&macro_release &mo 1>
-                , <&macro_release &tog 4>
+                , <&macro_tap &tog 4>
                 ;
         };
         t4m2t4: tog_4_mo_2_tog_4_in_release {
@@ -53,10 +53,10 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog 4>
-                //, <&macro_press &mo 2>
+                , <&macro_press &mo 2>
                 , <&macro_pause_for_release>
-                //, <&macro_release &mo 2>
-                , <&macro_release &tog 4>
+                , <&macro_release &mo 2>
+                , <&macro_tap &tog 4>
                 ;
         };
     };
@@ -85,7 +85,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&t4m2t4>, <&none>;
+            bindings = <&t4m2t4>, <&tog 4>;
         };
     };
     
