@@ -36,6 +36,25 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
+        
+        t4m1t4: tog_4_mo_1_tog_4_in_release {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &tog 4>
+                , <&macro_press &mo 1>
+                , <&macro_release &tog 4>
+                ;
+        };
+        t4m2t4: tog_4_mo_2_tog_4_in_release {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &tog 4>
+                , <&macro_press &mo 2>
+                , <&macro_release &tog 4>
+                ;
+        };
     };
     
     behaviors {
@@ -50,6 +69,19 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo 2>, <&mo 3>;
+        };
+        
+        t4bL: tog4backL {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&t4m1t4>, <&tog 4>;
+        };
+        t4bR: tog4backR {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&t4m2t4>, <&tog 4>;
         };
     };
     
