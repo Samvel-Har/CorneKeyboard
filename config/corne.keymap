@@ -59,6 +59,16 @@
                 , <&macro_tap &tog 4>
                 ;
         };
+        
+        wpscrn: win_print_screen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp PSCRN>
+                , <&macro_release &kp LGUI>
+                ;
+        };
     };
     
     behaviors {
@@ -86,6 +96,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&t4m2t4>, <&tog 4>;
+        };
+        
+        prscr: PrintScreen {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PSCRN>, <&wpscrn>;
         };
     };
     
